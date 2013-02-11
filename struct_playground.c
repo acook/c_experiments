@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-typedef struct { char* c; char b; } a;
+typedef struct { char* c; char b; } analyze_this;
 
-int main()
-{
-    printf("sizeof(a) == %d", sizeof(a));
+int main() {
+  unsigned char c;
+  printf(" -- Struct.size: %d \n", sizeof(analyze_this));
 }
