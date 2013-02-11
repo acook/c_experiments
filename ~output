@@ -1,13 +1,15 @@
 $ compile struct_playground
 struct_playground.c: In function ‘main’:
+struct_playground.c:8: warning: ISO C90 forbids specifying subobject to initialize
 struct_playground.c:8: warning: initialization makes integer from pointer without a cast
+struct_playground.c:8: warning: ISO C90 forbids specifying subobject to initialize
 struct_playground.c:8: warning: initialization makes integer from pointer without a cast
 struct_playground.c:11: warning: assignment from incompatible pointer type
-struct_playground.c:15: warning: implicit declaration of function ‘print_hex_bytes_from_sequence’
-struct_playground.c:16: warning: control reaches end of non-void function
 struct_playground.c: At top level:
 struct_playground.c:18: warning: conflicting types for ‘print_hex_bytes_from_sequence’
 struct_playground.c:15: warning: previous implicit declaration of ‘print_hex_bytes_from_sequence’ was here
+struct_playground.c: In function ‘print_hex_bytes_from_sequence’:
+struct_playground.c:22: warning: comparison between signed and unsigned
 
 $ ./struct_playground
  -- struct(analyze_this) size: 2
