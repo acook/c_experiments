@@ -8,9 +8,13 @@ Check out the individually subdirectories for more info.
 aliases
 -------
 
-`source ./aliases` to get my `compile` alias, it runs `gcc` with strict settings.
+`source ./aliases` to get my `compile` alias, it runs `gcc` with strict settings and writes binaries to `./bin`.
 
-It also writes binaries to `./bin`.
+It will automatically append `.c` so leave it off, and it will create a file with the name of the script.
+
+Usage:
+
+`compile script_base_name`
 
 bin
 ---
