@@ -8,16 +8,16 @@ Check out the individually subdirectories for more info.
 helpers
 -------
 
-`source ./helpers` to get my `compile` function, it runs `gcc` with strict settings and writes binaries to `./bin`.
+Type `source ./helpers` to get my `compile` function, it runs `gcc` with strict settings and writes binaries to `./bin`.
 
 It will automatically append `.c` so leave it off, and it will create a file with the name of the script.
 
-Usage:
-
-`compile script_base_name`
+Usage: `compile script_base_name`
 
 bin
 ---
 
 Put compiled binaries here. We ignore this directory in git.
 
+Anthony M. Cook 2013
+====================
