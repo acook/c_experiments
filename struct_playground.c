@@ -19,7 +19,7 @@ void print_hex_bytes_from_sequence(void *location, unsigned int length) {
 int main() {
   unsigned int struct_size;
   char *pointer_to_struct;
-  SomeStruct analyze_this = {.value = 100, .number = 1000};
+  SomeStruct analyze_this = {100, 1000};
 
   struct_size = sizeof(analyze_this);
 
