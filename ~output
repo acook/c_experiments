@@ -1,0 +1,12 @@
+$ compile struct_playground
+struct_playground.c: In function ‘main’:
+struct_playground.c:11: warning: assignment from incompatible pointer type
+struct_playground.c:15: warning: implicit declaration of function ‘print_hex_bytes_from_sequence’
+struct_playground.c:16: warning: control reaches end of non-void function
+struct_playground.c: At top level:
+struct_playground.c:18: warning: conflicting types for ‘print_hex_bytes_from_sequence’
+struct_playground.c:15: warning: previous implicit declaration of ‘print_hex_bytes_from_sequence’ was here
+
+$ ./struct_playground
+ -- struct(analyze_this) size: 2
+00 00
