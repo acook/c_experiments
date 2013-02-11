@@ -5,28 +5,26 @@ typedef struct {
   unsigned int number;
 } SomeStruct;
 
+void print_hex_bytes_from_sequence(void *location, unsigned int length) {
+  unsigned char *sequence = location;
+  unsigned int i;
+
+  for(i = 0; i < length; i++) {
+    printf("%02X ", sequence[i]);
+  }
+
+  printf("\n");
+}
+
 int main() {
   unsigned int struct_size;
   char *pointer_to_struct;
   SomeStruct analyze_this = {.value = 100, .number = 1000};
 
   struct_size = sizeof(analyze_this);
-  pointer_to_struct = (char *)&analyze_this;
 
   printf(" -- struct(analyze_this) size: %d \n", struct_size);
 
-  print_hex_bytes_from_sequence(pointer_to_struct, struct_size);
+  print_hex_bytes_from_sequence(&analyze_this, struct_size);
 }
 
-void print_hex_bytes_from_sequence(const char* c, unsigned int length) {
-  unsigned int byte_from_struct;
-  int i;
-
-  for(i = 0; i < length; i++) {
-    c++;
-    byte_from_struct = *c;
-    printf("%02X ", byte_from_struct);
-  }
-
-  printf("\n");
-}
