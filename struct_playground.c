@@ -1,11 +1,14 @@
 #include <stdio.h>
 
-typedef struct { char some_chr; char some_other_chr; } SomeStruct;
+typedef struct {
+  unsigned int value;
+  unsigned int number;
+} SomeStruct;
 
 int main() {
   unsigned int struct_size;
-  int *pointer_to_struct;
-  SomeStruct analyze_this = {.some_chr = "a", .some_other_chr = "z"};
+  void *pointer_to_struct;
+  SomeStruct analyze_this = {.value = 100, .number = 1000};
 
   struct_size = sizeof(analyze_this);
   pointer_to_struct = &analyze_this;
