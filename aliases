@@ -1,0 +1,1 @@
+compile() { gcc -Wextra -ansi -pedantic $1.c -o ./bin/$1; }
