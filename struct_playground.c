@@ -7,11 +7,11 @@ typedef struct {
 
 int main() {
   unsigned int struct_size;
-  void *pointer_to_struct;
+  char *pointer_to_struct;
   SomeStruct analyze_this = {.value = 100, .number = 1000};
 
   struct_size = sizeof(analyze_this);
-  pointer_to_struct = &analyze_this;
+  pointer_to_struct = (char *)&analyze_this;
 
   printf(" -- struct(analyze_this) size: %d \n", struct_size);
 
