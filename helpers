@@ -12,3 +12,7 @@ llvm() {
 asm() {
   clang -Wextra -ansi -pedantic -march=native "$1.c" -o "./$1.s"  -S "${@:2}"
 }
+
+ll2s() {
+  llc -mcpu=haswell "$1.ll"
+}
