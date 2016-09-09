@@ -28,7 +28,6 @@ Ltmp0:
 	vmovaps	LCPI1_0(%rip), %xmm0    ## xmm0 = [1,2,3,4]
 	vmovaps	%xmm0, %xmm1
 	callq	_mul4
-	movl	$0, 4(%rsp)
 	xorl	%eax, %eax
 	popq	%rcx
 	retq
