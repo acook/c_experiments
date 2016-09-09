@@ -2,13 +2,13 @@
 
 compile() {
   outfile=$(basename $1)
-  clang -Wextra -ansi -pedantic "$1.c" -o "./bin/$outfile" -O2 "${@:2}"
+  clang -Wextra -ansi -pedantic -march=native  "$1.c" -o "./bin/$outfile" -O2 "${@:2}"
 }
 
 llvm() {
-  clang -S -Wextra -ansi -pedantic "$1.c" -o "./$1.ll" -emit-llvm "${@:2}"
+  clang -Wextra -ansi -pedantic -march=native "$1.c" -o "./$1.ll" -S -emit-llvm "${@:2}"
 }
 
 asm() {
-  clang -S -Wextra -ansi -pedantic "$1.c" -o "./$1.s" "${@:2}"
+  clang -Wextra -ansi -pedantic -march=native "$1.c" -o "./$1.s"  -S "${@:2}"
 }
