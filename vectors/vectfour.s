@@ -22,16 +22,15 @@ LCPI1_0:
 _main:                                  ## @main
 	.cfi_startproc
 ## BB#0:
-	subq	$40, %rsp
+	pushq	%rax
 Ltmp0:
-	.cfi_def_cfa_offset 48
+	.cfi_def_cfa_offset 16
 	vmovaps	LCPI1_0(%rip), %xmm0    ## xmm0 = [1,2,3,4]
-	vmovaps	%xmm0, 16(%rsp)
 	vmovaps	%xmm0, %xmm1
 	callq	_mul4
-	movl	$0, 12(%rsp)
+	movl	$0, 4(%rsp)
 	xorl	%eax, %eax
-	addq	$40, %rsp
+	popq	%rcx
 	retq
 	.cfi_endproc
 
