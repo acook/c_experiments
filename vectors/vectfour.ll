@@ -1,7 +1,7 @@
 
 define <4 x i32> @mul4(<4 x i32> %v1, <4 x i32> %v2) {
-       %1 = mul <4 x i32> %v1, %v2
-       ret <4 x i32> %1
+  %1 = mul <4 x i32> %v1, %v2
+  ret <4 x i32> %1
 }
 
 define i32 @main() #0 {
