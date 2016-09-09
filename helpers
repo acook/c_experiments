@@ -1,1 +1,10 @@
-compile() { gcc -Wextra -ansi -pedantic $1.c -o ./bin/$1; }
+#!/usr/bin/env bash
+
+compile() {
+  outfile=$(basename $1)
+  clang -O2 -Wextra -ansi -pedantic $1.c -o ./bin/$outfile
+}
+
+llvm() {
+  clang -S -emit-llvm -Wextra -ansi -pedantic $1.c -o ./$1.ll $2
+}
