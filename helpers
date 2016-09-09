@@ -2,9 +2,13 @@
 
 compile() {
   outfile=$(basename $1)
-  clang -O2 -Wextra -ansi -pedantic $1.c -o ./bin/$outfile
+  clang -Wextra -ansi -pedantic "$1.c" -o "./bin/$outfile" -O2 "${@:2}"
 }
 
 llvm() {
-  clang -S -emit-llvm -Wextra -ansi -pedantic $1.c -o ./$1.ll $2
+  clang -S -Wextra -ansi -pedantic "$1.c" -o "./$1.ll" -emit-llvm "${@:2}"
+}
+
+asm() {
+  clang -S -Wextra -ansi -pedantic "$1.c" -o "./$1.s" "${@:2}"
 }
